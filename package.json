@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration=production --no-progress",
     "test": "ng test --codeCoverage",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless --codeCoverage --progress=false",
     "lint": "ng lint",
@@ -57,7 +58,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn format:fix && yarn lint && yarn checkCompile",
-      "pre-push": "yarn build:prod && yarn test:ci && yarn e2e"
+      "pre-push": "yarn build:prod && yarn test:ci"
     }
   }
 }
